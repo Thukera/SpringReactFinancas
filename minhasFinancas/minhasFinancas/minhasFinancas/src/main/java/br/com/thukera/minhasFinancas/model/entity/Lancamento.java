@@ -24,7 +24,7 @@ import lombok.Data;
 @Data
 @Entity
 @Builder
-@Table( name = "lancamento" , schema = "minhasfinancas")
+@Table( name = "lancamento" , schema = "minhasFinancas")
 public class Lancamento {
 
 	@Id

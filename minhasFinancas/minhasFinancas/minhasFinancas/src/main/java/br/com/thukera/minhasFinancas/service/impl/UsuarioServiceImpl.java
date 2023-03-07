@@ -1,13 +1,9 @@
 package br.com.thukera.minhasFinancas.service.impl;
 
-import org.springframework.stereotype.Service;
-
-import br.com.thukera.minhasFinancas.exception.RegraNegociosException;
 import br.com.thukera.minhasFinancas.model.entity.Usuario;
 import br.com.thukera.minhasFinancas.model.repository.UsuarioRepository;
 import br.com.thukera.minhasFinancas.service.UsuarioService;
 
-@Service
 public class UsuarioServiceImpl implements UsuarioService{
 
 		private UsuarioRepository repository;
@@ -31,10 +27,8 @@ public class UsuarioServiceImpl implements UsuarioService{
 
 		@Override
 		public void validarEmail(String email) {
-			boolean existe = repository.existsByEmail(email);
-			if(existe) {
-				throw new RegraNegociosException("Já existe um Usuario cadastrado com esta conta de E-mail");
-			}	
+			// TODO Auto-generated method stub
+			
 		}
 	
 }

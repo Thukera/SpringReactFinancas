@@ -1,0 +1,32 @@
+#################### #################### ################## #################### ####################
+#################### #################### QUERY´S POSTGRESQL #################### ####################
+
+######## ######## CRIAÇÃO DE BANCO
+create database financas;
+create schema minhasFinancas;
+
+######## ######## CRIAÇÃO DE TABELAS 
+create table minhasFinancas.usuario 
+(
+	id bigserial not null primary key,
+	nome character not null ,
+	email character varying(100),
+	senha character varying(100),
+	data character varying(100)
+); 
+create table minhasFinancas.lancamento 
+(
+	id bigserial not null primary key,
+	descricao character varying(100) not null,
+	mes integer not null,
+	ano integer not null,
+	valor numeric(16,2),
+	tipo character varying(20) check (tipo in ('RECEITA','DESPESA') ) not NULL,
+	status character varying(20) check (status in ('PENDENTE','CANCELADO', 'EFETIVADO' ) ) not NULL,
+	id_usuario bigint references minhasFinancas.usuario (id) not NULL,
+	data_cadastro date default NOW()
+); 
+
+
+#################### #################### ################## #################### ####################
+
